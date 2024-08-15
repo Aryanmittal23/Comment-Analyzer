@@ -1,10 +1,4 @@
-import React from "react";
-import { BiSolidMoon, BiSolidSun } from "react-icons/bi";
-interface NavbarProps {
-  theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
-}
-const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
+const Navbar = () => {
   const Navlinks = [
     {
       id: 1,
@@ -28,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
     },
   ];
   return (
-    <nav className="shadow-md bg-gray-200 dark:bg-dark dark:text-white duration-300">
+    <nav className="shadow-md bg-gray-200 duration-300">
       <div className="container md:py-0 py-3">
         <div className="flex justify-between">
           <div className="p-5">
@@ -46,19 +40,6 @@ const Navbar: React.FC<NavbarProps> = ({ theme, setTheme }) => {
                   </a>
                 </li>
               ))}
-              <div>
-                {theme === "dark" ? (
-                  <BiSolidSun
-                    className="text-2xl cursor-pointer "
-                    onClick={() => setTheme("light")}
-                  />
-                ) : (
-                  <BiSolidMoon
-                    className="text-2xl cursor-pointer"
-                    onClick={() => setTheme("dark")}
-                  />
-                )}
-              </div>
             </ul>
           </div>
         </div>
