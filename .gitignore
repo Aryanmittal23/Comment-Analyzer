@@ -1,5 +1,5 @@
 # Logs
-/backend/.env
+/Back-end/.env
 logs
 *.log
 npm-debug.log*
