@@ -1,16 +1,16 @@
+*{
+  background-color: rgba(18, 18, 18, 0.95);
+}
 :root
 {
   --color-text:black;
-  --color-bg:radial-gradient(circle, rgba(227,227,227,1) 0%, rgba(255,251,251,1) 100%);
+  --color-bg:rgba(18, 18, 18, 0.95);
 
-  --color-bg-navbar:white;
-  --color-login-button:white;
-  --color-signup-button:rgb(241, 172, 34);
   --color-text-button:black;
   --color-mode:black;
 
   --color-mode-background:transparent;
-  --color-border-radius:black;
+
   --color-search-button:black;
   --color-search:#ffffff;
   --color-search-text:black;

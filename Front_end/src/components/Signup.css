@@ -1,9 +1,1 @@
 @import "../vars.css";
-body
-{
-  background:var(--color-bg);
-}
-.heading
-{
-  color:var(--color-text);
-}

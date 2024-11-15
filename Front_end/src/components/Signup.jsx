@@ -55,7 +55,7 @@ function App() {
     <div className="container-fluid p-4">
       <div className="row">
         <div className="col-md-6 d-flex flex-column justify-content-center text-center text-md-start">
-          <h1 className="my-5 display-3 fw-bold ls-tight px-3 heading">
+          <h1 className="my-5 display-3 fw-bold ls-tight px-3 heading text-white">
             Decode Comments <br />
             <span className="text-primary">Elevate Insights.</span>
           </h1>
@@ -71,7 +71,7 @@ function App() {
 
         <div className="col-md-6">
           <div className="card my-5">
-            <div className="card-body p-5">
+            <div className="card-body p-5 bg-black">
               <form onSubmit={handleSignup}>
                 <input
                   className="form-control w-full mb-4"
@@ -114,7 +114,7 @@ function App() {
                       required
                     />
                     <label
-                      className="form-check-label"
+                      className="form-check-label  text-white bg-black"
                       htmlFor="flexCheckDefault"
                     >
                       Terms and Conditions
@@ -122,7 +122,7 @@ function App() {
                   </div>
                 </div>
 
-                <button className="btn btn-primary w-100 mb-4" type="submit">
+                <button className="btn btn-primary w-100 mb-4 text-white" type="submit">
                   Sign up
                 </button>
                 <h6
@@ -137,16 +137,16 @@ function App() {
               </form>
 
               <div className="divider d-flex align-items-center my-4">
-                <p className="text-center fw-bold mx-3 mb-0">OR</p>
+                <p className="text-center fw-bold mx-3 mb-0 text-white bg-black flex justify-center align-center items-center">OR</p>
               </div>
 
-              <div className="signbutton">
+              <div className="signbutton flex gap-4 items-center justify-center bg-black">
                 <a
                   className="btn btn-light btn-md btn-block Auth"
                   style={{ background: "white", border: "1.5px solid black" }}
                   href="#!"
                   role="button"
-                  // onClick={(e) => loginWithRedirect()}
+
                 >
                   <i className="fab fa-twitter me-2">
                     <FcGoogle />

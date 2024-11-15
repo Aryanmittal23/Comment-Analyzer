@@ -9,6 +9,8 @@ import { BodyArea } from "./components/bodyArea.jsx";
 import { Login } from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
 import { Auth0Provider } from "@auth0/auth0-react";
+import Hero from "./components/Hero.jsx";
+import Home from "./pages/Home.jsx";
 // import { Auth0Provider } from "@auth0/auth0-react";
 
 const router = createBrowserRouter([
@@ -16,7 +18,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <BodyArea /> },
+      { path: "/", element: <Home /> },
+      {path:"/Body",element:<BodyArea/>},
       { path: "/Login", element: <Login /> },
       { path: "/Signup", element: <Signup /> },
     ],

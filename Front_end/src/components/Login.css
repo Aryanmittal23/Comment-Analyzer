@@ -1,16 +1,18 @@
 @import "../vars.css";
+*{
+  background-color: black;
+  font:white;
+}
 .divider:after,
 .divider:before {
   content: "";
   flex: 1;
   height: 1px;
-  background: #eee;
 }
 .section
 {
   box-sizing: border-box;
   height: 100%;
-  background-color: var(--color-bg);
   color:var(--color-text);
 }
 .signbutton
@@ -20,7 +22,6 @@
 }
 #Email
 {
-   background-color: var(--color-search);
   color:var(--color-search-text);
   font-weight: 600;
 }

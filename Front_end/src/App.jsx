@@ -10,7 +10,7 @@ import { Outlet } from 'react-router-dom';
 function App() {
   return (
     <>
-    <div className="d-flex flex-column justify-content-between vh-100 body">
+    <div className="d-flex flex-column justify-content-between vh-100 body ">
       <Navbar></Navbar>
       <Outlet/>
     </div>

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "../App.css";
 import { Comments } from "./Comments";
-
+import {motion} from 'framer-motion'
 import { LoadingSpinner } from "./LodingSpinner";
 import "./Searchbar.css";
 import {SentimentChart} from "./SentimentChart";
@@ -83,49 +83,54 @@ export const Searchbar = () => {
 
   return (
     <>
-      <div className="Searchbar" style={{ width: "100%" }}>
-        <input
+      <div className="Searchbar flex flex-col gap-3" style={{ width: "100%" }}>
+        <motion.input
+        initial={{y:-100,opacity:0}}
+        animate={{y:0,opacity:1}}
+
           type="url"
           name="URL"
           id="URL"
           value={fucUrl}
           placeholder="Enter Url"
+          className='bg-gray-200 rounded-xl w-[500px] h-[40px]'
           style={{
-            width: "40%",
-            height: "38px",
             paddingLeft: "15px",
             paddingRight: "10px",
           }}
-          className="rounded-start-4 hover-effect text_input"
           onChange={handleUrlChange}
           required
         />
+        <motion.div 
+        initial={{x:100,opacity:0}}
+        animate={{x:0,opacity:1}}
+        className="flex flex-row justify-center align-center gap-2">
         <input
           type="button"
           value="Submit"
-          className="rounded-end-4 border border-dark hover-button button-response"
+          className="bg-blue-400 rounded-xl p-2 hover:bg-blue-600 hover:scale-110"
           onClick={handleSubmit}
         />
         <select
           id="options"
           value={option}
           onChange={handleOptionChange}
-          className="select"
+          className="select bg-gray-200 rounded-lg cursor-pointer hover:scale-105"
         >
-          <option value="All" className="option">
+          <option value="All" className="option bg-white">
             All
           </option>
-          <option value="Positive" className="option">
+          <option value="Positive" className="option bg-white">
             Positive
           </option>
-          <option value="Negative" className="option">
+          <option value="Negative" className="option bg-white">
             Negative
           </option>
-          <option value="Nutural" className="option">
+          <option value="Nutural" className="option bg-white">
             Neutral
           </option>
         </select>
-
+        </motion.div>
       </div>
         <SentimentChart positive={positiveCount} negative={negativeCount} neutral={neutralCount} data={Comment}></SentimentChart>
       {!fetching && !Comment ? (
