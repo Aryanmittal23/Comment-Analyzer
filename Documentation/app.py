@@ -3,7 +3,6 @@ import requests
 import json
 from streamlit_lottie import st_lottie
 
-# Set page configuration
 st.set_page_config(
     page_title="Comment Analyzer - YouTube Insights",
     page_icon="📊",
