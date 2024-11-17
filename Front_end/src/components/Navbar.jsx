@@ -14,7 +14,17 @@ const navigate=useNavigate()
 const [mode,setMode] =  useState("light");
 const [login,setlogin] = useState("LoggedIn");
 const { user, loginWithRedirect,isAuthenticated} = useAuth0();
+const [isScrolled,setIsScrolled]=useState(false);
 
+useEffect(()=>{
+  const handleScroll=()=>{
+    setIsScrolled(window.scrollY>10)
+  }
+  window.addEventListener("scroll",handleScroll)
+  return ()=>{
+    window.removeEventListener("scroll",handleScroll);
+  }
+})
 useEffect(()=>
 {
   if(localStorage.getItem("token"))
@@ -49,7 +59,7 @@ const handleInsight=()=>{
                 <li className="text-lg p-4 border-b-2 dark:hover:text-indigo-200 dark:hover:border-indigo-200 border-indigo-500 border-opacity-0 hover:border-opacity-100 hover:text-indigo-500 duration-200 cursor-pointer active">
                   <a href="https://comment-analyzer-doc.streamlit.app/"
                   target="_blank" 
-                  className="no-underline text-white hover:text-indigo-500">
+                  className="no-underline active text-white hover:text-indigo-500">
                   Documentation</a></li>
                 <li 
                 onClick={handleInsight}

@@ -3,6 +3,8 @@ import { FcGoogle } from "react-icons/fc";
 import { ImFacebook2 } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
 // import { useAuth0 } from "@auth0/auth0-react";
+import "../index.css"
+import {motion} from 'framer-motion'
 
 function App() {
   const history = useNavigate();
@@ -55,23 +57,36 @@ function App() {
     <div className="container-fluid p-4">
       <div className="row">
         <div className="col-md-6 d-flex flex-column justify-content-center text-center text-md-start">
-          <h1 className="my-5 display-3 fw-bold ls-tight px-3 heading text-white">
+          <motion.h1 
+          initial={{x:-100,opacity:0}}
+          animate={{x:0,opacity:1}}
+          exit={{x:100,opacity:0}}
+          transition={{type:'spring',damping:10,stiffness:200,duration:0.8}}
+          className="my-5 display-3 fw-bold ls-tight px-3 heading text-white">
             Decode Comments <br />
-            <span className="text-primary">Elevate Insights.</span>
-          </h1>
-          <p className="px-3" style={{ color: "hsl(217, 10%, 50.8%)" }}>
+            <motion.span className="text-primary">Elevate Insights.</motion.span>
+          </motion.h1>
+          <motion.p 
+          initial={{y:-100,opacity:0}}
+          animate={{y:0,opacity:1}}
+          transition={{type:'tween',duration:0.3,delay:0.1}}
+          className="px-3" style={{ color: "hsl(217, 10%, 50.8%)" }}>
             Sentiment analysis, a powerful application of machine learning,
             involves the automatic identification and classification of emotions
             conveyed within a piece of text. By leveraging natural language
             processing algorithms, sentiment analysis enables machines to
             discern whether a text expresses positive, negative, or neutral
             sentiments.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="col-md-6">
-          <div className="card my-5">
-            <div className="card-body p-5 bg-black">
+        <div className="col-md-6 ">
+          <motion.div 
+          initial={{y:-100,opacity:1}}
+          animate={{y:0,opacity:1}}
+          transition={{type:'tween',duration:0.2,damping:150,stiffness:500}}
+          className=" my-5 bg-black">
+            <div className=" p-5 bg-black">
               <form onSubmit={handleSignup}>
                 <input
                   className="form-control w-full mb-4"
@@ -104,7 +119,7 @@ function App() {
                 />
 
                 <div className="d-flex justify-content-center mb-4">
-                  <div className="form-check">
+                  <div className=" bg-black">
                     <input
                       className="form-check-input"
                       type="checkbox"
@@ -114,7 +129,7 @@ function App() {
                       required
                     />
                     <label
-                      className="form-check-label  text-white bg-black"
+                      className=" text-white bg-black"
                       htmlFor="flexCheckDefault"
                     >
                       Terms and Conditions
@@ -167,7 +182,7 @@ function App() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
