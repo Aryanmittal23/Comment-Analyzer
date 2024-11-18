@@ -31,7 +31,13 @@ export const Login = () => {
     localStorage.setItem("token", user?.email);
     history("/");
   };
-
+  const handleFacebookauth = async (e) => {
+    await loginWithRedirect();
+    console.log(user);
+    console.log("hello world");
+    localStorage.setItem("token", user?.email);
+    history("/");
+  };
   const handleonSubmit = async (e) => {
     e.preventDefault();
     await fetch("http://localhost:3001/auth/Login", {
@@ -155,6 +161,7 @@ export const Login = () => {
                       style={{ background: "#3b5998" }}
                       href="#!"
                       role="button"
+                      onClick={handleFacebookauth}
                     >
                       <i className="fab fa-facebook-f me-2">
                         {/* Facebook icon here */}

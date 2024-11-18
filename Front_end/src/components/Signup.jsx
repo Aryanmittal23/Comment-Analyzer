@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { ImFacebook2 } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
-// import { useAuth0 } from "@auth0/auth0-react";
+ import { useAuth0 } from "@auth0/auth0-react";
 import "../index.css"
 import {motion} from 'framer-motion'
 
@@ -15,7 +15,7 @@ function App() {
   };
   const [form, setform] = useState(form1);
   const [warning, setwarning] = useState(false);
-  // const { user,loginWithRedirect } = useAuth0();
+   const { user,loginWithRedirect } = useAuth0();
 
   //handlers
   const handleSignup = async (e) => {
@@ -48,7 +48,20 @@ function App() {
         console.log(err);
       });
   };
-
+  const handleGoogleauth = async (e) => {
+    await loginWithRedirect();
+    console.log(user);
+    console.log("hello world");
+    localStorage.setItem("token", user?.email);
+    history("/");
+  };
+  const handleFacebookauth = async (e) => {
+    await loginWithRedirect();
+    console.log(user);
+    console.log("hello world");
+    localStorage.setItem("token", user?.email);
+    history("/");
+  };
   const handleChange = (e) => {
     setform({ ...form, [e.target.name]: e.target.value });
   };
@@ -161,7 +174,7 @@ function App() {
                   style={{ background: "white", border: "1.5px solid black" }}
                   href="#!"
                   role="button"
-
+                  onClick={handleGoogleauth}
                 >
                   <i className="fab fa-twitter me-2">
                     <FcGoogle />
@@ -174,6 +187,7 @@ function App() {
                   style={{ background: "#3b5998" }}
                   href="#!"
                   role="button"
+                  onClick={handleFacebookauth}
                 >
                   <i className="fab fa-facebook-f me-2">
                     <ImFacebook2 />
